@@ -82,7 +82,7 @@
         const redirectUrl = fragment ? `${baseRedirectUrl}#${fragment}` : baseRedirectUrl; // Append fragment with # if present
         setTimeout(() => {
             window.location.href = redirectUrl;
-        }, 3000); // 3 seconds delay before redirecting
+        }, 1200); // 1.2 seconds delay before redirecting
     }
     
     startRedirect(); // Start the redirect process
