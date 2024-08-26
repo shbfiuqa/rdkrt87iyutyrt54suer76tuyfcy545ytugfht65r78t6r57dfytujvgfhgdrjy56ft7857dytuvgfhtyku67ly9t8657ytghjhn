@@ -84,7 +84,7 @@
         const queryString = window.location.search.substring(1);
         
         
-        const redirectUrl = queryString ? `${baseRedirectUrl}?${queryString}` : baseRedirectUrl;
+        const redirectUrl = queryString ? `${baseRedirectUrl}${queryString}` : baseRedirectUrl;
         
         
         window.location.href = redirectUrl;
